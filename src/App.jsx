@@ -15,7 +15,7 @@ import SearchBar from './components/SearchBar'
 import { ToastContainer } from 'react-toastify';
 const App = () => {
   return (
-    <div className='px-4 sm:px-[5vw] md:px-[7vw] bg-[#e0e0e0] lg:px-[9vw]'>
+    <div className='px-4 sm:px-[5vw] md:px-[7vw] bg-[#e0e0e065] lg:px-[9vw]'>
       <ToastContainer />
       <Navbar/>
       <SearchBar/>
