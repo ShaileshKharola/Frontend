@@ -6,7 +6,7 @@ const Order = () => {
   return (
     <div className='border-t pt-16'>
       <div className='text-2x1'>
-        <Title text1={'MY'} text2={'ORDER'} />
+        <Title text1={'MY '} text2={'ORDER'} />
       </div>
       <div>{
         products.slice(1,4).map((item, index) => (
