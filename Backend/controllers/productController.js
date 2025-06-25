@@ -18,7 +18,7 @@ const addProduct = async (req, res) => {
     )
 
     const productData={
-      name, description, price:Number(price), category, subCategory, sizes: JSON.parse(sizes), bestseller:bestseller ==="true"?true:false,
+      name, description, price:Number(price), category, subCategory, sizes: JSON.parse(sizes), bestseller: bestseller === "true",
       image:imagesUrl,
       date:Date.now()
     }
@@ -32,10 +32,23 @@ const addProduct = async (req, res) => {
   }
 }
 const listProducts=async(req,res)=>{
-    
+    try {
+      const products=await productModel.find({});
+      res.json({success:true,products})
+      
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: error.message });
+    }
 }
 const removeProduct=async(req,res)=>{
-    
+  try {
+    await productModel.findByIdAndDelete(req.params.id)
+    res.json({success:true,message:"Product Removed"})
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: error.message });
+  }
 }
 const singleProduct=async(req,res)=>{
 
